@@ -1,0 +1,6 @@
+{
+  "schema:name": "metric: impressions",
+  "@id": "xdm:impressions",
+  "xdm:measurement": "count",
+  "xdm:unit": ""
+}

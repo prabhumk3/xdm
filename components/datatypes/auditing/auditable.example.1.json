@@ -1,0 +1,8 @@
+{
+  "repo:createDate": "2018-01-12T15:52:25+00:00",
+  "repo:modifyDate": "2018-01-12T15:52:25+00:00",
+  "xdm:repositoryCreatedBy": "jsmith",
+  "xdm:repositoryLastModifiedBy": "jsmith",
+  "xdm:createdByBatchID": "https://data.adobe.io/batchid-123",
+  "xdm:modifiedByBatchID": "https://data.adobe.io/batchid-456"
+}

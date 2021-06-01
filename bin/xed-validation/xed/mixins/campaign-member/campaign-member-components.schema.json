@@ -1,0 +1,96 @@
+{
+    "$id": "mixins/campaign-member-components.schema.json",
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "title": "XDM Business Campaign Member Components",
+    "type": "object",
+    "meta:extensible": true,
+    "meta:abstract": true,
+    "description": "This mixin is used to capture B2B campaign member specific relationship attributes that are represented as it is in source and also used for merge/unmerge rules analysis if and when needed.",
+    "meta:status": "experimental",
+    "meta:xdmType": "object",
+    "properties": {
+        "campaignMemberComponents": {
+            "type": "array",
+            "meta:xdmType": "array",
+            "items": {
+                "type": "object",
+                "meta:xdmType": "object",
+                "properties": {
+                    "sourceCampaignMemberID": {
+                        "title": "Source Campaign Member ID",
+                        "description": "Campaign member unique identifier at source.",
+                        "$ref": "../datatypes/b2b-source.schema.json",
+                        "meta:xdmField": "xdm:sourceCampaignMemberID",
+                        "tagNumber": 1
+                    },
+                    "sourceCampaignID": {
+                        "title": "Source Campaign ID",
+                        "description": "Campaign unique identifier at the source.",
+                        "$ref": "../datatypes/b2b-source.schema.json",
+                        "meta:xdmField": "xdm:sourceCampaignID",
+                        "tagNumber": 2
+                    },
+                    "sourceExternalID": {
+                        "title": "Source External ID",
+                        "description": "External unique identifier at the source.",
+                        "$ref": "../datatypes/b2b-source.schema.json",
+                        "meta:xdmField": "xdm:sourceExternalID",
+                        "tagNumber": 3
+                    },
+                    "sourcePersonID": {
+                        "title": "Source Person ID",
+                        "description": "Campaign owner unique identifier at the source.",
+                        "$ref": "../datatypes/b2b-source.schema.json",
+                        "meta:xdmField": "xdm:sourcePersonID",
+                        "tagNumber": 4
+                    },
+                    "sourceAcquiredByCampaignID": {
+                        "title": "Source Acquired By CampaignID",
+                        "description": "",
+                        "$ref": "../datatypes/b2b-source.schema.json",
+                        "meta:xdmField": "xdm:sourceAcquiredByCampaignID",
+                        "tagNumber": 5
+                    },
+                    "memberStatus": {
+                        "title": "Source Campaign Member Status",
+                        "description": "",
+                        "type": "string",
+                        "meta:xdmType": "string",
+                        "meta:xdmField": "xdm:memberStatus",
+                        "tagNumber": 6
+                    },
+                    "memberStatusReason": {
+                        "title": "Source Status Reason",
+                        "description": "",
+                        "type": "string",
+                        "meta:xdmType": "string",
+                        "meta:xdmField": "xdm:memberStatusReason",
+                        "tagNumber": 7
+                    },
+                    "hasReachedSuccess": {
+                        "title": "Source Has Reached Success",
+                        "description": "",
+                        "type": "boolean",
+                        "meta:xdmType": "boolean",
+                        "meta:xdmField": "xdm:hasReachedSuccess",
+                        "tagNumber": 8
+                    },
+                    "reachedSuccessDate": {
+                        "title": "Source Reached Success Date",
+                        "description": "",
+                        "type": "string",
+                        "format": "date-time",
+                        "meta:xdmType": "date-time",
+                        "meta:xdmField": "xdm:reachedSuccessDate",
+                        "tagNumber": 9
+                    }
+                },
+                "tagNumber": 1
+            },
+            "meta:xdmField": "xdm:campaignMemberComponents",
+            "tagNumber": 1
+        }
+    },
+    "meta:xdmId": "https://ns.adobe.com/xdm/mixins/campaign-member-components",
+    "meta:altId": "_xdm.mixins.campaign-member-components"
+}

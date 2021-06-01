@@ -1,0 +1,45 @@
+{
+  "@id": "a7864a96-1eac-4934-ab44-54ad037b4f2b",
+  "xdm:timestamp": "2020-09-26T15:52:25+00:00",
+  "xdm:eventType": "web.webinteraction.contentDisplay",
+  "https://ns.adobe.com/experience/decisioning/propositions": [
+    {
+      "xdm:items": [
+        {
+          "xdm:id": "item1"
+        },
+        {
+          "xdm:id": "item2"
+        }
+      ],
+      "xdm:id": "AT:eyJhY3Rpdml0eUlkIjoiMzg0NDU5IiwiZXhwZXJpZW5jZUlkIjoiMSJ9",
+      "xdm:scope": "home",
+      "xdm:scopeDetails": {
+        "xdm:activity": {
+          "xdm:id": "384459",
+          "repo:etag": "8"
+        },
+        "xdm:strategies": [
+          {
+            "xdm:step": "targeting",
+            "xdm:algorithmID": "randomuniform",
+            "xdm:trafficType": "noncontextual"
+          }
+        ]
+      }
+    },
+    {
+      "xdm:items": [
+        {
+          "xdm:id": "personalized-offer:f67bab756ed6ee4",
+          "xdm:data": {
+            "xdm:id": "urn:aaid:sc:US:6dc33479-13ca-4b19-b25d-c805eff8a69e",
+            "xdm:content": "30% off on your next reservation"
+          }
+        }
+      ],
+      "xdm:id": "3cc33a7e-13ca-4b19-b25d-c816eff9a70a",
+      "xdm:scope": "scope:12cfc3fa94281acb"
+    }
+  ]
+}

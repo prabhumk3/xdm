@@ -1,0 +1,61 @@
+{
+    "meta:license": [
+        "Copyright 2019 Adobe Systems Incorporated. All rights reserved.",
+        "This work is licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) license",
+        "you may not use this file except in compliance with the License. You may obtain a copy",
+        "of the License at https://creativecommons.org/licenses/by/4.0/"
+    ],
+    "$id": "https://ns.adobe.com/experience/decisioning/proposition",
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "title": "Experience Event - Proposition Reference",
+    "type": "object",
+    "meta:abstract": true,
+    "meta:extensible": true,
+    "meta:intendedToExtend": [
+        "https://ns.adobe.com/xdm/context/experienceevent"
+    ],
+    "description": "A decision proposition reference is used to link an experience event that is a response to a particular proposition event. For a given decision request and profile identity the response of the request is a unique proposition. If a decision is requested again for the same profile and the output happens to be the same options, it is still considered a different proposition with a unique ID. Multiple scopes and item lists can be returned with the same proposition.",
+    "definitions": {
+        "proposition-mixin": {
+            "properties": {
+                "https://ns.adobe.com/experience/decisioning/propositionID": {
+                    "title": "Proposition Identifier",
+                    "type": "string",
+                    "format": "uri-reference",
+                    "description": "A unique identifier for the proposition event referenced by another \"XDM ExperienceEvent\". It is the expectation that applications use this \"propositionID\" in every experience event that was influenced by the set of propositions. An individual profile's proposition-response history is maintained with these proposition identifiers."
+                }
+            }
+        }
+    },
+    "allOf": [
+        {
+            "$ref": "https://ns.adobe.com/xdm/common/extensible#/definitions/@context"
+        },
+        {
+            "$ref": "https://ns.adobe.com/xdm/context/identitymap"
+        },
+        {
+            "$ref": "#/definitions/proposition-mixin"
+        }
+    ],
+    "meta:status": "stable",
+    "examples": [
+        {
+            "xdm:identityMap": {
+                "ECID": [
+                    {
+                        "xdm:id": "68519882713298129995549973016107434638",
+                        "xdm:primary": true
+                    }
+                ],
+                "CPGN": [
+                    {
+                        "xdm:id": "https://data.adobe.io/entities/identity/1234567",
+                        "xdm:primary": true
+                    }
+                ]
+            },
+            "https://ns.adobe.com/experience/decisioning/propositionID": "3cc33a7e-13ca-4b19-b25d-c816eff9a70a"
+        }
+    ]
+}

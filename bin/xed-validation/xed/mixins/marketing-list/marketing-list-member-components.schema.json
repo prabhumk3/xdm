@@ -1,0 +1,53 @@
+{
+    "$id": "mixins/marketing-list-member-components.schema.json",
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "title": "XDM Business Marketing List Member Components",
+    "type": "object",
+    "auditable": true,
+    "meta:extensible": true,
+    "meta:abstract": true,
+    "description": "Relationship attributes for a marketing list and its members from a single data source. This is also the place to add attributes if there is a need to do any kind of segmentation in future.",
+    "meta:status": "experimental",
+    "meta:xdmType": "object",
+    "properties": {
+        "marketingListMemberComponents": {
+            "type": "array",
+            "meta:xdmType": "array",
+            "items": {
+                "type": "object",
+                "meta:xdmType": "object",
+                "properties": {
+                    "sourceMarketingListMemberID": {
+                        "title": "Source Marketing List Identifier",
+                        "$ref": "../datatypes/b2b-source.schema.json",
+                        "meta:xdmField": "xdm:sourceMarketingListMemberID",
+                        "tagNumber": 1
+                    },
+                    "sourcePersonID": {
+                        "title": "Source Person Identifier",
+                        "$ref": "../datatypes/b2b-source.schema.json",
+                        "meta:xdmField": "xdm:sourcePersonID",
+                        "tagNumber": 2
+                    },
+                    "sourceMarketingListID": {
+                        "title": "Source Marketing List Identifier",
+                        "$ref": "../datatypes/b2b-source.schema.json",
+                        "meta:xdmField": "xdm:sourceMarketingListID",
+                        "tagNumber": 3
+                    },
+                    "sourceExternalID": {
+                        "title": "Source External Identifier",
+                        "$ref": "../datatypes/b2b-source.schema.json",
+                        "meta:xdmField": "xdm:sourceExternalID",
+                        "tagNumber": 4
+                    }
+                },
+                "tagNumber": 1
+            },
+            "meta:xdmField": "xdm:marketingListMemberComponents",
+            "tagNumber": 1
+        }
+    },
+    "meta:xdmId": "https://ns.adobe.com/xdm/mixins/marketing-list-member-components",
+    "meta:altId": "_xdm.mixins.marketing-list-member-components"
+}

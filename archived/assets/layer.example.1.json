@@ -1,0 +1,9 @@
+{
+  "xdm:name": "Example Layer",
+  "xdm:width": 768,
+  "xdm:height": 768,
+  "xdm:originY": 0,
+  "xdm:originX": 256,
+  "xdm:unit": "pixels",
+  "xdm:visible": true
+}

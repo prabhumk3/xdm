@@ -1,0 +1,103 @@
+{
+    "meta:license": [
+        "Copyright 2020 Adobe Systems Incorporated. All rights reserved.",
+        "This work is licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) license",
+        "you may not use this file except in compliance with the License. You may obtain a copy",
+        "of the License at https://creativecommons.org/licenses/by/4.0/"
+    ],
+    "$id": "https://ns.adobe.com/experience/journeyOrchestration/stepEvents/journeyStepEventDataFetchFields",
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "title": "Journey Orchestration Step Data Fetch Fields",
+    "type": "object",
+    "meta:extensible": true,
+    "meta:abstract": true,
+    "meta:intendedToExtend": [
+        "https://ns.adobe.com/experience/journeyOrchestration/stepEvents/journeyStepEvent",
+        "https://ns.adobe.com/xdm/context/experienceevent"
+    ],
+    "description": "Journey Orchestration Data Fetch Field for a Step Event.",
+    "definitions": {
+        "journeyStepEventDataFetchFields": {
+            "properties": {
+                "https://ns.adobe.com/experience/journeyOrchestration/stepEvents": {
+                    "title": "Journey Step Event Data Fetch Field.",
+                    "type": "object",
+                    "properties": {
+                        "https://ns.adobe.com/experience/journeyOrchestration/fetchTotalTime": {
+                            "meta:status": "deprecated",
+                            "title": "fetchTotalTime",
+                            "description": "(Deprecated).Sum of fetchPlatformTotalTime and fetchCustomTotalTime.",
+                            "type": "integer"
+                        },
+                        "https://ns.adobe.com/experience/journeyOrchestration/fetchTypeInError": {
+                            "title": "fetchTypeInError",
+                            "description": "The source of the first error that occurred while fetching fields to compute a journey step. Set to either Custom or AEP.",
+                            "type": "string"
+                        },
+                        "https://ns.adobe.com/experience/journeyOrchestration/fetchError": {
+                            "title": "fetchError",
+                            "description": "Error condition that prevented Journey Runtime from executing the fetch. E.g: capping on the Data Source API etc, http error.",
+                            "type": "string"
+                        },
+                        "https://ns.adobe.com/experience/journeyOrchestration/fetchErrorCode": {
+                            "title": "fetchErrorCode",
+                            "description": "Error code corresponding to fetchError.",
+                            "type": "string"
+                        },
+                        "https://ns.adobe.com/experience/journeyOrchestration/fetchOriginError": {
+                            "title": "fetchOriginError",
+                            "description": "In case of http error, the latest API response message. E.g: invalid payload, internal server error.",
+                            "type": "string"
+                        },
+                        "https://ns.adobe.com/experience/journeyOrchestration/fetchOriginErrorCode": {
+                            "title": "fetchOriginErrorCode",
+                            "description": "Error code corresponding to fetchOriginError.",
+                            "type": "string"
+                        },
+                        "https://ns.adobe.com/experience/journeyOrchestration/fetchCount": {
+                            "meta:status": "deprecated",
+                            "title": "fetchCount",
+                            "description": "(Deprecated)Sum of number of calls made to custom data source and to AEP to fetch the required details to process a step. E.g: To process a condition step.",
+                            "type": "integer"
+                        },
+                        "https://ns.adobe.com/experience/journeyOrchestration/fetchPlatformTotalTime": {
+                            "title": "fetchPlatformTotalTime",
+                            "description": "Total time(ms) to fetch all the required fields from the custom data source to execute the step.",
+                            "type": "integer"
+                        },
+                        "https://ns.adobe.com/experience/journeyOrchestration/fetchPlatformCount": {
+                            "title": "fetchPlatformCount",
+                            "description": "Number of calls made to AEP to fetch the required details to process a step.",
+                            "type": "integer"
+                        },
+                        "https://ns.adobe.com/experience/journeyOrchestration/fetchCustomTotalTime": {
+                            "title": "fetchCustomTotalTime",
+                            "description": "Total time(ms) to fetch all the required fields from the custom data source to execute the step.",
+                            "type": "integer"
+                        },
+                        "https://ns.adobe.com/experience/journeyOrchestration/fetchCustomCount": {
+                            "title": "fetchCustomCount",
+                            "description": "Number of calls made to custom data source and to AEP to fetch the required details to process a step. E.g: To process a condition step.",
+                            "type": "integer"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "allOf": [
+        {
+            "$ref": "#/definitions/journeyStepEventDataFetchFields"
+        }
+    ],
+    "meta:status": "stable",
+    "examples": [
+        {
+            "https://ns.adobe.com/experience/journeyOrchestration/fetchTotalTime": 300,
+            "https://ns.adobe.com/experience/journeyOrchestration/fetchError": "http",
+            "https://ns.adobe.com/experience/journeyOrchestration/fetchPlatformTotalTime": 300,
+            "https://ns.adobe.com/experience/journeyOrchestration/fetchPlatformCount": 48,
+            "https://ns.adobe.com/experience/journeyOrchestration/fetchCustomTotalTime": 434
+        }
+    ]
+}

@@ -1,0 +1,6 @@
+{
+  "schema:name": "metric: clicks",
+  "@id": "xdm:clicks",
+  "xdm:measurement": "count",
+  "xdm:unit": ""
+}

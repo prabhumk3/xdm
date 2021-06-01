@@ -1,0 +1,110 @@
+{
+    "meta:license": [
+        "Copyright 2020 Adobe Systems Incorporated. All rights reserved.",
+        "This work is licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) license",
+        "you may not use this file except in compliance with the License. You may obtain a copy",
+        "of the License at https://creativecommons.org/licenses/by/4.0/"
+    ],
+    "$id": "https://ns.adobe.com/experience/journeyOrchestration/stepEvents/journeyStepEventActionExecutionFields",
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "title": "Journey Orchestration Step Event Action Execution Fields",
+    "type": "object",
+    "meta:extensible": true,
+    "meta:abstract": true,
+    "meta:intendedToExtend": [
+        "https://ns.adobe.com/experience/journeyOrchestration/stepEvents/journeyStepEvent",
+        "https://ns.adobe.com/xdm/context/experienceevent"
+    ],
+    "description": "This Mixin will have Journey Action Metadata Fields.",
+    "definitions": {
+        "journeyStepEventActionExecutionFields": {
+            "properties": {
+                "https://ns.adobe.com/experience/journeyOrchestration/stepEvents": {
+                    "title": "Journey Orchestration Action Execution Fields.",
+                    "type": "object",
+                    "properties": {
+                        "https://ns.adobe.com/experience/journeyOrchestration/actionID": {
+                            "title": "actionID",
+                            "description": "GUID generated when the action is first authored on the JO canvas. Replicating the same action indirectly, by means of duplicating the journey or publishing a new version does not generate a new actionID.",
+                            "type": "string"
+                        },
+                        "https://ns.adobe.com/experience/journeyOrchestration/actionName": {
+                            "title": "actionName",
+                            "description": "Name of the action as it appears on the Journey Canvas, if the action is internal to JO Runtime, then action name is set to stepName field.",
+                            "type": "string"
+                        },
+                        "https://ns.adobe.com/experience/journeyOrchestration/actionType": {
+                            "title": "actionType",
+                            "description": "Denotes the action channel invoked. E.g: Email, SMS, customHttp",
+                            "type": "string"
+                        },
+                        "https://ns.adobe.com/experience/journeyOrchestration/actionParameterized": {
+                            "title": "actionParameterized",
+                            "description": "True if the journey runtime passed in dynamic values retrieved at runtime to successfully execute the action. E.g: This field will be set to true, if a custom http action requires some values from external data sources for successful execution.",
+                            "type": "boolean"
+                        },
+                        "https://ns.adobe.com/experience/journeyOrchestration/actionExecutionTime": {
+                            "title": "actionExecutionTime",
+                            "description": "Time(ms) inside Journey Engine to call the necessary APIs to execute the action.",
+                            "type": "integer"
+                        },
+                        "https://ns.adobe.com/experience/journeyOrchestration/actionExecutionError": {
+                            "title": "actionExecutionError",
+                            "description": "Error condition that prevented Journey Runtime from executing the action. E.g: timeout on the action step, capping on the action API etc, http error. ",
+                            "type": "string"
+                        },
+                        "https://ns.adobe.com/experience/journeyOrchestration/actionExecutionErrorCode": {
+                            "title": "actionExecutionErrorCode",
+                            "description": "Error code corresponding to actionExecutionError.",
+                            "type": "string"
+                        },
+                        "https://ns.adobe.com/experience/journeyOrchestration/actionExecutionOriginError": {
+                            "title": "actionExecutionOriginError",
+                            "description": "In case of timeout or http error, the latest API response message. E.g: invalid payload, internal server error.",
+                            "type": "string"
+                        },
+                        "https://ns.adobe.com/experience/journeyOrchestration/actionExecutionOriginCode": {
+                            "title": "actionExecutionOriginCode",
+                            "description": "Error code corresponding to actionExecutionOriginError.",
+                            "type": "string"
+                        },
+                        "https://ns.adobe.com/experience/journeyOrchestration/actionBusinessType": {
+                            "title": "actionBusinessType",
+                            "description": "The business solution powering the executed action. E.g: ACC, Epsilon. ",
+                            "type": "string"
+                        },
+                        "https://ns.adobe.com/experience/journeyOrchestration/deliveryJobID": {
+                            "meta:status": "deprecated",
+                            "title": "deliveryJobID",
+                            "description": "(Deprecated).This describes the delivery Job Id for the batch Journey.",
+                            "type": "string"
+                        },
+                        "https://ns.adobe.com/experience/journeyOrchestration/batchDeliveryID": {
+                            "meta:status": "deprecated",
+                            "title": "batchDeliveryID",
+                            "description": "(Deprecated).This describes the delivery Id for the batch Journey.",
+                            "type": "string"
+                        },
+                        "https://ns.adobe.com/experience/journeyOrchestration/fromSegmentTrigger": {
+                            "meta:status": "deprecated",
+                            "title": "fromSegmentTrigger",
+                            "description": "(Deprecated).This describes if the Batch Journey triggered from Audisence Segment.",
+                            "type": "boolean"
+                        },
+                        "https://ns.adobe.com/experience/journeyOrchestration/actionSchedulerCount": {
+                            "title": "actionSchedulerCount",
+                            "description": "Number of times the Journey Runtime Scheduler was invoked to fulfil the given journey step. E.g for a Wait step, count of actionSchedulerCount=1",
+                            "type": "integer"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "allOf": [
+        {
+            "$ref": "#/definitions/journeyStepEventActionExecutionFields"
+        }
+    ],
+    "meta:status": "stable"
+}

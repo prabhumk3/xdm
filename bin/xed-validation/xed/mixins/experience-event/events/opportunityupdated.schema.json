@@ -1,0 +1,70 @@
+{
+    "$id": "mixins/events/opportunityupdated.schema.json",
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "title": "Opportunity Updated",
+    "type": "object",
+    "meta:conditionalField": "xdm:eventType",
+    "meta:conditionalValue": "opportunityEvent.opportunityUpdated",
+    "description": "Use for information regarding opportunity event opportunity updated events.",
+    "meta:status": "experimental",
+    "meta:xdmType": "object",
+    "properties": {
+        "opportunityEvent": {
+            "title": "Opportunity Event",
+            "type": "object",
+            "meta:xdmType": "object",
+            "properties": {
+                "opportunityID": {
+                    "title": "Opportunity ID",
+                    "type": "string",
+                    "description": "Unique identifier for opportunity",
+                    "meta:xdmType": "string",
+                    "meta:xdmField": "xdm:opportunityID",
+                    "tagNumber": 1
+                },
+                "dataValueChanges": {
+                    "title": "Data Value Changes",
+                    "type": "array",
+                    "meta:xdmType": "array",
+                    "items": {
+                        "type": "object",
+                        "meta:xdmType": "object",
+                        "properties": {
+                            "attributeName": {
+                                "title": "Attribute Name",
+                                "type": "string",
+                                "description": "Name of the attribute",
+                                "meta:xdmType": "string",
+                                "meta:xdmField": "xdm:attributeName",
+                                "tagNumber": 1
+                            },
+                            "newValue": {
+                                "title": "New Value",
+                                "type": "string",
+                                "description": "New value of the attribute",
+                                "meta:xdmType": "string",
+                                "meta:xdmField": "xdm:newValue",
+                                "tagNumber": 2
+                            },
+                            "oldValue": {
+                                "title": "Old Value",
+                                "type": "string",
+                                "description": "Old value of the attribute",
+                                "meta:xdmType": "string",
+                                "meta:xdmField": "xdm:oldValue",
+                                "tagNumber": 3
+                            }
+                        },
+                        "tagNumber": 1
+                    },
+                    "meta:xdmField": "xdm:dataValueChanges",
+                    "tagNumber": 2
+                }
+            },
+            "meta:xdmField": "xdm:opportunityEvent",
+            "tagNumber": 1
+        }
+    },
+    "meta:xdmId": "https://ns.adobe.com/xdm/mixins/events/opportunityupdated",
+    "meta:altId": "_xdm.mixins.events.opportunityupdated"
+}

@@ -1,0 +1,86 @@
+{
+  "@id": "https://data.adobe.io/entities/propositions/3cc33a7e-13ca-4b19-b25d-c816eff9a70a",
+  "xdm:timestamp": "2019-01-26T15:52:25+00:00",
+  "xdm:identityMap": {
+    "ECID": [{ "xdm:id": "33441528584054496761339722935948080609" }]
+  },
+  "https://ns.adobe.com/experience/decisioning/propositionID": "3cc33a7e-13ca-4b19-b25d-c816eff9a70a",
+  "https://ns.adobe.com/experience/decisioning/propositions": [
+    {
+      "xdm:items": [
+        {
+          "xdm:id": "xcore:personalized-offer:f67bab756ed6ee4",
+          "repo:etag": "5",
+          "xdm:score": 83,
+          "xdm:propositionsTotal": {
+            "xdm:value": 948
+          }
+        },
+        {
+          "xdm:id": "xcore:personalized-offer:e91ee850a0bb7d9",
+          "repo:etag": "3",
+          "xdm:score": 12,
+          "xdm:propositionsTotal": {
+            "xdm:value": 221
+          }
+        }
+      ],
+      "xdm:scopeDetails": {
+        "xdm:id": "home-page-banner",
+        "xdm:placement": {
+          "xdm:id": "xcore:offer-placement:c652463157c2aa1",
+          "repo:etag": "4",
+          "xdm:name": "Home Page Banner"
+        },
+        "xdm:activity": {
+          "xdm:id": "xcore:offer-activity:ebc48132c26ccfc",
+          "repo:etag": "8",
+          "xdm:name": "Spring 21 Campaign Web"
+        },
+        "xdm:strategies": [
+          {
+            "xdm:step": "eligibility",
+            "xdm:strategyID": "xcore:eligibility-rule:e5244c22eff29e8",
+            "xdm:algorithmID": "pql-rule",
+            "xdm:trafficType": "contextual"
+          },
+          {
+            "xdm:step": "ranking",
+            "xdm:strategyID": "ranking-strategy:7251468357c2236",
+            "xdm:algorithmID": "ts",
+            "xdm:trafficType": "noncontextual"
+          }
+        ]
+      }
+    },
+    {
+      "xdm:items": [
+        {
+          "xdm:id": "xcore:fallback-offer:e91ce7243fd8c2a",
+          "repo:etag": "5"
+        }
+      ],
+      "xdm:scopeDetails": {
+        "xdm:id": "home-page-side-bar",
+        "xdm:placement": {
+          "xdm:id": "xcore:offer-placement:6111463157c2221",
+          "repo:etag": "6"
+        },
+        "xdm:activity": {
+          "xdm:id": "xcore:offer-activity:fd55d033fea4b82",
+          "repo:etag": "14"
+        },
+        "xdm:strategies": [
+          {
+            "xdm:step": "eligibility",
+            "xdm:strategyID": "xcore:eligibility-rule:f65212b6b3c0b01",
+            "xdm:algorithmID": "pql-rule",
+            "xdm:trafficType": "contextual"
+          }
+        ]
+      }
+    }
+  ],
+  "https://ns.adobe.com/adobecloudplatform/ims/organizationID": "0D8E32C65A8A91520A494008@AdobeOrg",
+  "https://ns.adobe.com/experience/decisioning/containerID": "c75afa32-371f-4895-8f43-b853dd9fe740"
+}

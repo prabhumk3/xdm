@@ -1,0 +1,82 @@
+{
+  "meta:license": [
+    "Copyright 2019 Adobe Systems Incorporated. All rights reserved.",
+    "This work is licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) license",
+    "you may not use this file except in compliance with the License. You may obtain a copy",
+    "of the License at https://creativecommons.org/licenses/by/4.0/"
+  ],
+  "$id": "https://ns.adobe.com/experience/decisioning/decisionevent",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Decision Event",
+  "type": "object",
+  "meta:abstract": true,
+  "meta:extensible": true,
+  "meta:extends": [
+    "https://ns.adobe.com/xdm/data/time-series",
+    "https://ns.adobe.com/xdm/context/identitymap",
+    "https://ns.adobe.com/experience/decisioning/proposition",
+    "https://ns.adobe.com/experience/decisioning/proposition-details"
+  ],
+  "description": "A decision event is used to capture observations about the outcome and context of a decision activity. The decision event captures information about how the decision made, when it was occurring, what options were proposed (chosen) and what contextual state existed that either influenced the decision or could be observed during the decision process. The decision event also captures the proposition ID, a globally unique identifier that can be used to correlate the decision to other events. DecisionEvents are not only relatable to Experience Events that impacted a decision but also to ExperienceEvents that are a direct response to a proposition. It is the expectation that applications reference the proposition ID in every experience event that was influenced by the propositions. A user profile's proposition-response history is maintained with these proposition IDs.",
+  "definitions": {
+    "decisionevent": {
+      "properties": {
+        "https://ns.adobe.com/experience/decisioning/propositions": {
+          "title": "Proposition Details",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/proposition-details"
+          },
+          "description": "Details about the results of the decision. An array providing the output of a single decision event, one proposition per activity parameter in the request."
+        }
+      }
+    },
+    "proposition-details": {
+      "properties": {
+        "xdm:items": {
+          "title": "Decision Options' Snapshot",
+          "description": "Snapshot of the options that were selected by this proposition. The objects contain at least the xdm:id property value which is the identifier of an option. The intention is that either the selections or the fallback property is required.",
+          "type": "array",
+          "items": {
+            "$ref": "https://ns.adobe.com/experience/decisioning/option-detail"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "xdm:scopeDetails": {
+          "$ref": "https://ns.adobe.com/experience/decisioning/scope-details",
+          "title": "Decision Scope Snapshot",
+          "description": "A snapshot of properties from the decision scope. This is the state of the scope entity that was used in the decision requst."
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "https://ns.adobe.com/xdm/common/extensible#/definitions/@context"
+    },
+    {
+      "$ref": "https://ns.adobe.com/xdm/data/time-series"
+    },
+    {
+      "$ref": "https://ns.adobe.com/xdm/context/identitymap"
+    },
+    {
+      "$ref": "https://ns.adobe.com/experience/decisioning/proposition"
+    },
+    {
+      "$ref": "https://ns.adobe.com/experience/decisioning/proposition-details"
+    },
+    {
+      "$ref": "#/definitions/decisionevent"
+    },
+    {
+      "required": [
+        "@id",
+        "xdm:timestamp",
+        "https://ns.adobe.com/experience/decisioning/propositionID"
+      ]
+    }
+  ],
+  "meta:status": "stable"
+}
